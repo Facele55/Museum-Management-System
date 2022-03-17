@@ -1,16 +1,12 @@
 <?php
 // Include config file
 require_once "config.php";
- 
 // Define variables and initialize with empty values
-
 $id = $M_Name =  $City = $Address = $Type = $District = $Site = "";
 $id_err = $M_Name_err =  $City_err = $Address_err = $Type_err = $District_err = $Site_err = "";
- 
 
 $select1 = "SELECT * FROM district";
 $result1 = mysqli_query($link, $select1)  or die ("bad sql: $link");
-
 
 $select2 = "SELECT * FROM type";
 $result2 = mysqli_query($link, $select2)  or die ("bad sql: $link");

@@ -1,24 +1,16 @@
-
 <?php
-
 error_reporting(0);
 include('admin/config.php');
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-  <title> Museum Management System</title>
+    <title> Museum Management System</title>
 </head>
 
 <body>
@@ -46,44 +38,33 @@ include('admin/config.php');
           </div>
         </div>
 </form>
-
-
-
-
     <!-- Page Features -->
-  
-<div class="row text-left">
-<?php
-$ret=mysqli_query($link,"select * from museum");
-$num=mysqli_num_rows($ret);
-if($num>0){
-$cnt=1;
-while ($row=mysqli_fetch_array($ret)) {
-
-?>
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body">
-            <h4 class="card-title" align="center"><?php  echo $row['M_Name'];?></h4>
-               <p class="card-text"><b>Address:</b> <?php  echo $row['Address'];?></p>
-                 <p class="card-text"><b>City:</b> <?php  echo $row['City'];?></p>
-                  <p class="card-text"><b>Type of museum:</b> <?php  echo $row['Type'];?></p>
-                    <p class="card-text"><b>District:</b> <?php  echo $row['District'];?></p>
-                      <p><b>Website:</b><a href="  "></a> <?php  echo '<a href="' .  $row['Site'] . '">Go to site </a>';?></p>
-
-          </div>
-        </div>
-      </div>
-    <?php } }?>
-
-
-      
-
+      <div class="row text-left">
+          <?php
+          $ret=mysqli_query($link,"select * from museum");
+          $num=mysqli_num_rows($ret);
+          if($num>0){
+              $cnt=1;
+              while ($row=mysqli_fetch_array($ret)) {
+                  ?>
+                  <div class="col-lg-4 col-md-6 mb-4">
+                      <div class="card h-100">
+                          <div class="card-body">
+                              <h4 class="card-title" align="center"><?php  echo $row['M_Name'];?></h4>
+                              <p class="card-text"><b>Address:</b> <?php  echo $row['Address'];?></p>
+                              <p class="card-text"><b>City:</b> <?php  echo $row['City'];?></p>
+                              <p class="card-text"><b>Type of museum:</b> <?php  echo $row['Type'];?></p>
+                              <p class="card-text"><b>District:</b> <?php  echo $row['District'];?></p>
+                              <p><b>Website:</b><a href="  "></a>
+                                  <?php  echo '<a href="' .  $row['Site'] . '">Go to site </a>';?>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              <?php } }?>
     </div>
     <!-- /.row -->
-
   </div>
   <!-- /.container -->
 </body>
-
 </html>
