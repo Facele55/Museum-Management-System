@@ -3,6 +3,7 @@
 Simple System for displaying information about museums. 
   User can view only front page, info on it.
   Admin have full control over data.
+Used Technologies: PHP, CSS, MySQL
 
 1. Download the zip file or clone repository
 2. Extract the file and copy MMS folder
